@@ -1,0 +1,928 @@
+/*Globals*/
+body {
+  font-family: "Trebuchet", Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.bg-green {
+  background: #16892c;
+}
+.bg-blue {
+  background: #1586c0;
+}
+
+.bg-red {
+  background: #852407;
+}
+
+.bg-light-blue {
+  background: #5e6373;
+}
+
+/*HEADER*/
+.header {
+  position: fixed;
+  height: 5rem;
+  background: #383e4c;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 1;
+}
+
+.button1 {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  height: 3rem;
+  width: 9rem;
+  border: #5e6373 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.25s;
+}
+
+.button1:hover {
+  background: #5e6373;
+}
+
+.button1 a {
+  font-size: 18px;
+  color: #fff;
+}
+
+.mobile-menu {
+  width: 3.4rem;
+  height: 2.1rem;
+  padding-bottom: 0.4rem;
+  background: rgb(82, 82, 88);
+  top: 1rem;
+  right: 10rem;
+  border-radius: 3px;
+}
+
+.hamburger {
+  width: 50%;
+  height: 0.12rem;
+  background: #fff;
+  border: none;
+}
+
+.mobile-nav {
+  width: 80%;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 5rem;
+  left: 2rem;
+  z-index: 2;
+}
+
+.mobile-nav-item {
+  width: 100%;
+  height: 20%;
+  border-bottom: #fff 0.25px solid;
+  text-align: center;
+  background: #383e4c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-nav a {
+  top: 10rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/*Conquer Display Main*/
+.display-main {
+  /* height: 30rem;
+  background-image: url("../img/forestBG.jpg"); */
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+}
+
+.display-main::after {
+  content: "";
+  height: 76vh;
+  width: 100%;
+  background-image: url("../img/forestBG.jpg");
+  background-attachment: fixed;
+  filter: blur(3px);
+  z-index: -1;
+}
+
+.display-main .headers {
+  position: absolute;
+  text-align: center;
+}
+
+.display-main h1 {
+  margin-top: 10rem;
+  font-size: 100px;
+  color: #fff;
+  text-shadow: 3px 2px black;
+}
+
+.display-main h4 {
+  font-size: 40px;
+  color: #fff;
+}
+
+.about-position {
+  position: relative;
+  top: 5rem;
+  z-index: -1;
+}
+
+/*Cards row of 3*/
+.cards-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 29rem;
+  color: #727f89;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  margin-left: 1.3rem;
+}
+
+.card-sm {
+  background: #efefef;
+  display: grid;
+  margin-right: 1.8rem;
+  grid-template-columns: 23.25rem;
+  grid-template-rows: 12rem 13rem 4.2rem;
+  grid-template-areas: "image" "text" "button";
+  text-align: left;
+}
+
+.card-image1 {
+  grid-area: image;
+  background: url("../img/northernlights.jpg");
+  background-size: cover;
+}
+
+.card-image2 {
+  grid-area: image;
+  background: url("../img/bridge.jpg");
+  background-size: cover;
+}
+
+.card-image3 {
+  grid-area: image;
+  background: url("../img/trainBridge.jpg");
+  background-size: cover;
+}
+
+.card-text {
+  grid-area: text;
+  margin: 1.5rem;
+  line-height: 1.3rem;
+  font-size: 14px;
+}
+
+.button {
+  grid-area: button;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-1 {
+  font-size: 1.1rem;
+  color: #fff;
+  padding: 0.75rem 1.9rem;
+  border-radius: 0.5rem;
+}
+
+.grey-text {
+  color: #666971;
+}
+.green-text {
+  color: #16892c;
+}
+.blue-text {
+  color: #1586c0;
+}
+
+/*Cards Row of 2*/
+.cards-2 {
+  height: 40rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #727f89;
+  margin-bottom: 4rem;
+}
+
+.card-lg {
+  background: #efefef;
+  display: grid;
+  margin-right: 1.8rem;
+  grid-template-columns: 36.5rem;
+  grid-template-rows: 16rem 19rem 3rem;
+  grid-template-areas: "image" "text" "button";
+  text-align: left;
+}
+
+.card-lg .upper {
+  margin-top: 2rem;
+}
+
+.card-lg .lower {
+  margin-top: 1.6rem;
+}
+
+.title-lg {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.card-image4 {
+  grid-area: image;
+  background: url("../img/glass.jpg");
+  background-size: cover;
+}
+
+.card-image5 {
+  grid-area: image;
+  background: url("../img/sunset.jpg");
+  background-size: cover;
+}
+
+.btn-2 {
+  color: #727f89;
+  background: #fff;
+  padding: 0.7rem 2rem;
+  border: 1px solid #e8e8;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  margin-left: 16rem;
+}
+
+.btn-2:hover {
+  background: #efefef;
+}
+
+.card-text-lg {
+  grid-area: text;
+  margin: 1.5rem;
+  line-height: 1.3rem;
+  font-size: 16px;
+}
+
+/*Services*/
+.services {
+  height: 20rem;
+  background-image: url("../img/valley.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  justify-content: center;
+}
+
+.services-content {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  position: relative;
+  top: 7rem;
+  color: #fff;
+}
+
+.title-services {
+  font-weight: lighter;
+  font-size: 2.1rem;
+  text-shadow: 2px 2px #5b5958;
+}
+
+.services-content p {
+  font-size: 1.2rem;
+}
+
+/* Cards row of 4 */
+.cards-3 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  height: 35rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card-tn {
+  background: #efefef;
+  display: grid;
+  margin-right: 1.8rem;
+  width: 16.5rem;
+  grid-template-rows: 17rem 4rem 10rem;
+  grid-template-areas: "image" "text" "button";
+  text-align: left;
+}
+
+.card-tn .title {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.card-tn p {
+  margin-left: 1rem;
+  margin-right: 1.6rem;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  color: #727f89;
+}
+
+.card-tn .title {
+  color: #727f89;
+}
+
+.card-tn .button-area {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-3 {
+  background: #fff;
+  text-align: center;
+  position: relative;
+  width: 6.5rem;
+  height: 2.5rem;
+  top: 0.5rem;
+  border: #727f89 solid 1px;
+  border-radius: 0.6rem;
+  color: #727f89;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image6 {
+  grid-area: image;
+  background: url("../img/lakePier.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.card-image7 {
+  grid-area: image;
+  background: url("../img/snowyMountain.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.card-image8 {
+  grid-area: image;
+  background: url("../img/sunset2.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.card-image9 {
+  grid-area: image;
+  background: url("../img/autumnLeaves.jpg") no-repeat center;
+  background-size: cover;
+}
+
+/*Single Large Column*/
+.cards-4 {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.card-giant {
+  background: #efefef;
+  display: grid;
+  margin-right: 1.8rem;
+  width: 100%;
+  grid-template-rows: 25rem 3rem 11rem;
+  grid-template-areas: "image" "text" "button";
+  text-align: left;
+}
+
+.card-image10 {
+  grid-area: image;
+  background: url("../img/lakeview.jpg");
+}
+
+.card-giant .title {
+  text-align: left;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-left: 2rem;
+  color: #727f89;
+}
+
+.card-giant p {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  color: #727f89;
+}
+
+.button-area-2 {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-4 {
+  background: #fff;
+  text-align: center;
+  position: relative;
+  width: 9rem;
+  height: 2.7rem;
+  top: 0.5rem;
+  border: #727f89 solid 1px;
+  border-radius: 0.6rem;
+  color: #727f89;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Contact Form*/
+.contact::after {
+  content: "";
+  height: 77vh;
+  width: 100%;
+  background-image: url("../img/cliffsideRoad.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+
+.contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form {
+  z-index: 1;
+  position: absolute;
+  left: 20rem;
+}
+
+.contact .message {
+  width: 71.5%;
+  height: 6.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  color: black;
+  position: relative;
+  border-radius: 0.25rem;
+}
+
+.contact .title,
+.contact .message {
+  margin-bottom: 2rem;
+}
+
+.contact .title h1 {
+  color: #fff;
+  font-size: 2.2rem;
+  text-shadow: 2px 2px black;
+  font-weight: 100;
+}
+
+.contact p {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.contact .prompt .info {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact .prompt input {
+  margin-bottom: 0.7rem;
+  outline: none;
+  border: none;
+}
+
+.inp-1 {
+  height: 1.5rem;
+  width: 22.2rem;
+  padding: 0.2rem 0.2rem;
+  border-radius: 0.3rem;
+  outline-width: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.inp-2 {
+  height: 6.6rem;
+  width: 22rem;
+  border-radius: 0.3rem;
+  outline-width: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.inp-1::placeholder {
+  color: black;
+}
+
+.inp-2::placeholder {
+  position: relative;
+  bottom: 2.7rem;
+  color: black;
+}
+
+.bg-dark {
+  background: #262628;
+  border-color: #fff;
+  color: #fff;
+}
+
+.button-area-3 {
+  margin-left: 8rem;
+}
+
+.contact .prompt .info .left-side {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+/*Free*/
+.free {
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: #ebeced 1px solid;
+}
+
+.free h1 {
+  font-weight: 100;
+  color: #646464;
+  font-style: italic;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.free p {
+  width: 30%;
+  text-align: center;
+  color: #727f89;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/*footer*/
+.footer {
+  height: 15rem;
+  text-align: center;
+}
+
+.footer p {
+  margin-top: 1.5rem;
+  font-size: 0.7rem;
+  color: #646464;
+}
+
+/*Media Queries*/
+@media (max-width: 800px) {
+  /*header*/
+  .header {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    left: 85%;
+    z-index: 5;
+  }
+
+  /*main title*/
+  .display-main {
+    height: 33vh;
+  }
+
+  .display-main h1 {
+    font-size: 3.7rem;
+    font-weight: 100;
+    position: relative;
+    bottom: 6rem;
+    color: #fff;
+    text-shadow: 3px 2px black;
+  }
+
+  .display-main h4 {
+    position: relative;
+    bottom: 5rem;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  /*Cards row of 3*/
+  .cards-1 {
+    height: 92rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-sm {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  /*Cards row of 2*/
+  .cards-2 {
+    height: 72em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-lg {
+    grid-template-columns: 100%;
+    grid-template-rows: 10rem 22rem 4rem;
+    grid-template-areas: "image" "text" "button";
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-2 {
+    margin-top: 2rem;
+    margin-left: 30%;
+  }
+
+  /*Services*/
+  .services .services-content {
+    width: 80%;
+    position: relative;
+    top: 4rem;
+  }
+
+  /*Cards of 4*/
+  .cards-3 {
+    display: flex;
+    flex-direction: column;
+    height: 133rem;
+  }
+
+  .card-tn {
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card-tn .button-area {
+    position: relative;
+    bottom: 2rem;
+  }
+
+  /*single giant card*/
+  .cards-4 {
+    height: 65rem;
+  }
+
+  .card-giant {
+    margin: auto;
+    font-size: 0.5rem;
+    height: 65rem;
+  }
+
+  .card-giant .button-area-2 {
+    position: relative;
+    top: 20rem;
+  }
+
+  /*contact form*/
+  .contact {
+    height: 47rem;
+  }
+
+  .contact::after {
+    height: 110vh;
+  }
+
+  .contact .message {
+    width: 95%;
+    height: 12rem;
+  }
+
+  .contact-form {
+    z-index: 1;
+    left: 3rem;
+    width: 80%;
+  }
+
+  .contact .title,
+  .contact .message {
+    margin-bottom: 2rem;
+  }
+
+  .contact .title h1 {
+    color: #fff;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px black;
+    font-weight: 100;
+  }
+
+  .contact p {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    text-align: center;
+    line-height: 1.5rem;
+  }
+
+  .contact .prompt .info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact .inp-1 {
+    width: 100%;
+    margin-right: 17rem;
+  }
+
+  .contact .inp-2 {
+    width: 96.5%;
+    margin-right: 16rem;
+  }
+
+  /*Free*/
+  .free {
+    height: 13rem;
+  }
+
+  .free h1,
+  p {
+    text-align: center;
+  }
+
+  .free p {
+    width: 70%;
+  }
+
+  /*footer*/
+  .footer {
+    height: 10rem;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1300px) {
+  /*Cards row of 3*/
+  .cards-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 29rem;
+    color: #727f89;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-left: 1.3rem;
+  }
+
+  .card-sm {
+    background: #efefef;
+    display: grid;
+    margin-right: 1.8rem;
+    grid-template-columns: 100%;
+    width: 40%;
+    grid-template-rows: 12rem 16rem 5rem;
+    grid-template-areas: "image" "text" "button";
+    text-align: left;
+  }
+
+  /*Cards row of 2*/
+  .cards-2 {
+    height: 45rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .card-lg {
+    grid-template-columns: 100%;
+    width: 45%;
+    grid-template-rows: 10rem 25rem 4rem;
+    grid-template-areas: "image" "text" "button";
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-2 {
+    margin-top: 2rem;
+    margin-left: 30%;
+  }
+
+  /*Cards of 4*/
+  .cards-3 {
+    display: grid;
+    grid-template-columns: 55% 35%;
+    height: 70rem;
+  }
+
+  .card-tn {
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card-tn .button-area {
+    position: relative;
+    bottom: 2rem;
+  }
+
+  /*single giant card*/
+  .cards-4 {
+    height: 48rem;
+  }
+
+  .card-giant {
+    margin: auto;
+    font-size: 0.5rem;
+    height: 48rem;
+  }
+
+  .card-giant .button-area-2 {
+    position: relative;
+    top: 4rem;
+  }
+
+  /*contact form*/
+  .contact {
+    height: 35rem;
+  }
+
+  .contact-form {
+    left: 0;
+    left: 4rem;
+  }
+
+  .contact .message {
+    width: 92%;
+    height: 7.5rem;
+    font-size: 1.1rem;
+  }
+
+  /*Free*/
+  .free {
+    height: 12rem;
+  }
+
+  .free p {
+    width: 45%;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+  }
+
+  /*footer*/
+  .footer {
+    height: 15rem;
+    text-align: center;
+  }
+
+  .footer p {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #646464;
+  }
+}
