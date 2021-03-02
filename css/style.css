@@ -636,9 +636,8 @@ h6 {
     z-index: 5;
   }
 
-  /*main title*/
-  .display-main {
-    height: 33vh;
+  .display-main::after {
+    height: 50vh;
   }
 
   .display-main h1 {
